@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app
+  labels:
+    app: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: fastapi-sample
+          image: ghcr.io/nakamasato/fastapi-sample:v1.0
+          envFrom:
+            - configMapRef:
+                name: sample-app  # ConfigMap名
+            - secretRef:
+                name: sample-app  # Secret名
+          resources: {}
