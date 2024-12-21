@@ -1,0 +1,13 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
+  },
+  "files.associations": {
+    "*.yml": "yaml",
+    "*.yaml": "yaml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": true
+  }
+}
